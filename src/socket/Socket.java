@@ -26,18 +26,21 @@ public class Socket {
     public static BufferedReader entrada;
     
     public static void iniciar1(){
-        try {
-            server = new ServerSocket(9000);
-            socketF = new java.net.Socket();
-            socketF = server.accept();
-            entrada = new BufferedReader(new InputStreamReader(socketF.getInputStream()));
-            String mensaje = entrada.readLine();
-            System.out.println(mensaje);
-            salida = new DataOutputStream(socketF.getOutputStream());
-            salida.writeUTF("Adios...");
-            socketF.close();
-        } catch (Exception e) {
+        while(true){
+           try {
+                server = new ServerSocket(9000);
+                socketF = new java.net.Socket();
+                socketF = server.accept();
+                entrada = new BufferedReader(new InputStreamReader(socketF.getInputStream()));
+                String mensaje = entrada.readLine();
+                System.out.println(mensaje);
+                salida = new DataOutputStream(socketF.getOutputStream());
+                salida.writeUTF("Jugada realizada...");
+                socketF.close();
+            } catch (Exception e) {
+            }
         }
+        
     }
     public static void iniciar2(){
         try {
@@ -72,9 +75,9 @@ public class Socket {
      * @param args the command line arguments
      */ 
     public static void main(String[] args) {
-        while(true){
-            iniciar1();
-        }
+        
+        iniciar1();
+        
         
         
     }
