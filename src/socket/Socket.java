@@ -34,8 +34,9 @@ public class Socket {
                 float valor = 0;
                 java.net.Socket s = server.accept();
                 DataInputStream entrada = new DataInputStream(s.getInputStream());
-                System.out.println("Version 1");
+                
                 String texto = entrada.readUTF();
+                System.out.println("Version 2");
                 cuenta = Integer.parseInt(texto.split(";")[0]);
                 valor = Float.parseFloat(texto.split(";")[1]);
                 System.out.println(cuenta);
