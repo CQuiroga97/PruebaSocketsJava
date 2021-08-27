@@ -25,6 +25,7 @@ public class Socket {
     public static void main(String[] args) {
         
         try {
+            System.out.println("ASD");
             FileWriter writer = new FileWriter("archivo.txt", true);
             ServerSocket server = new ServerSocket(3000);
             
