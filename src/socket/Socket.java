@@ -25,7 +25,7 @@ public class Socket {
     public static DataOutputStream salida;
     public static BufferedReader entrada;
     
-    public static void iniciar(){
+    public static void iniciar1(){
         try {
             server = new ServerSocket(9000);
             socketF = new java.net.Socket();
@@ -39,16 +39,11 @@ public class Socket {
         } catch (Exception e) {
         }
     }
-    /**
-     * @param args the command line arguments
-     */ 
-    public static void main(String[] args) {
-        iniciar();
-        /*
+    public static void iniciar2(){
         try {
             
             //FileWriter writer = new FileWriter("archivo.txt", true);
-            ServerSocket server = new ServerSocket(3000);
+            ServerSocket server = new ServerSocket(9000);
             
             while(true){
                 int cuenta = 0;
@@ -72,7 +67,16 @@ public class Socket {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
-*/
+    }
+    /**
+     * @param args the command line arguments
+     */ 
+    public static void main(String[] args) {
+        while(true){
+            iniciar2();
+        }
+        
+        
     }
     
 }
