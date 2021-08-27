@@ -34,7 +34,7 @@ public class Socket {
                 float valor = 0;
                 java.net.Socket s = server.accept();
                 DataInputStream entrada = new DataInputStream(s.getInputStream());
-                System.out.println("ASD3");
+                System.out.println("Version 1");
                 String texto = entrada.readUTF();
                 cuenta = Integer.parseInt(texto.split(";")[0]);
                 valor = Float.parseFloat(texto.split(";")[1]);
@@ -48,7 +48,7 @@ public class Socket {
             
             
         } catch (IOException ex) {
-            Logger.getLogger(Socket.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex);
         }
     }
     
