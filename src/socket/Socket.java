@@ -27,7 +27,7 @@ public class Socket {
     
     public static void iniciar(){
         try {
-            server = new ServerSocket(3000);
+            server = new ServerSocket(9000);
             socketF = new java.net.Socket();
             socketF = server.accept();
             entrada = new BufferedReader(new InputStreamReader(socketF.getInputStream()));
