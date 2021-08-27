@@ -26,7 +26,7 @@ public class Socket {
         
         try {
             System.out.println("ASD2");
-            FileWriter writer = new FileWriter("archivo.txt", true);
+            //FileWriter writer = new FileWriter("archivo.txt", true);
             ServerSocket server = new ServerSocket(3000);
             
             while(true){
@@ -38,8 +38,8 @@ public class Socket {
                 cuenta = Integer.parseInt(texto.split(";")[0]);
                 valor = Float.parseFloat(texto.split(";")[1]);
                 System.out.println(cuenta);
-                writer.write(Integer.toString(cuenta) + "," + Float.toString(valor) + "\n");
-                writer.close();
+                //writer.write(Integer.toString(cuenta) + "," + Float.toString(valor) + "\n");
+                //writer.close();
                 DataOutputStream outToClient = new DataOutputStream(s.getOutputStream());
                 outToClient.writeBytes("OK");
                 System.out.println("Enviado!");
