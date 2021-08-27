@@ -23,7 +23,7 @@ public class Socket {
      * @param args the command line arguments
      */ 
     public static void main(String[] args) {
-        System.out.println("Iniciando...");
+        System.out.println("Iniciando2...");
         try {
             FileWriter writer = new FileWriter("archivo.txt", true);
             ServerSocket server = new ServerSocket(3000);
