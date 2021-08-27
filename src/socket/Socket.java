@@ -49,7 +49,7 @@ public class Socket {
             
             
         } catch (IOException ex) {
-            System.out.println(ex);
+            System.out.println(ex.getMessage());
         }
     }
     
