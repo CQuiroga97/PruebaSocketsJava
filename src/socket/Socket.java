@@ -25,7 +25,7 @@ public class Socket {
     public static void main(String[] args) {
         
         try {
-            System.out.println("ASD3");
+            
             //FileWriter writer = new FileWriter("archivo.txt", true);
             ServerSocket server = new ServerSocket(3000);
             
@@ -34,6 +34,7 @@ public class Socket {
                 float valor = 0;
                 java.net.Socket s = server.accept();
                 DataInputStream entrada = new DataInputStream(s.getInputStream());
+                System.out.println("ASD3");
                 String texto = entrada.readUTF();
                 cuenta = Integer.parseInt(texto.split(";")[0]);
                 valor = Float.parseFloat(texto.split(";")[1]);
