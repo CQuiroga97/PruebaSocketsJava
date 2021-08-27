@@ -37,6 +37,7 @@ public class Socket {
                 salida = new DataOutputStream(socketF.getOutputStream());
                 salida.writeUTF("Jugada realizada...");
                 socketF.close();
+                server.close();
             } catch (Exception e) {
             }
         }
