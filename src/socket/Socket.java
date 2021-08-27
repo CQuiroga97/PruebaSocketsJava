@@ -33,9 +33,9 @@ public class Socket {
                 socketF = server.accept();
                 entrada = new BufferedReader(new InputStreamReader(socketF.getInputStream()));
                 String mensaje = entrada.readLine();
-                System.out.println(mensaje.split(":")[0]);
+                System.out.println(mensaje.split(":")[0] + " ha realizado un movimiento...");
                 salida = new DataOutputStream(socketF.getOutputStream());
-                salida.writeUTF(mensaje.split(":")[0] + " ha realizado un movimiento...");
+                salida.writeUTF(mensaje.split(":")[0]);
                 socketF.close();
                 server.close();
             } catch (Exception e) {
