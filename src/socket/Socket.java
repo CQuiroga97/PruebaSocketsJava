@@ -5,10 +5,12 @@
  */
 package socket;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,12 +20,31 @@ import java.util.logging.Logger;
  * @author Cristhian Quiroga
  */
 public class Socket {
-
+    public static ServerSocket server;
+    public static java.net.Socket socketF;
+    public static DataOutputStream salida;
+    public static BufferedReader entrada;
+    
+    public static void iniciar(){
+        try {
+            server = new ServerSocket(3000);
+            socketF = new java.net.Socket();
+            socketF = server.accept();
+            entrada = new BufferedReader(new InputStreamReader(socketF.getInputStream()));
+            String mensaje = entrada.readLine();
+            System.out.println(mensaje);
+            salida = new DataOutputStream(socketF.getOutputStream());
+            salida.writeUTF("Adios...");
+            socketF.close();
+        } catch (Exception e) {
+        }
+    }
     /**
      * @param args the command line arguments
      */ 
     public static void main(String[] args) {
-        
+        iniciar();
+        /*
         try {
             
             //FileWriter writer = new FileWriter("archivo.txt", true);
@@ -51,6 +72,7 @@ public class Socket {
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
         }
+*/
     }
     
 }
